@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -69,8 +70,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                                     }
                                 }.start();
                             }
-                            else
+                            else{
                                 Toast.makeText(getApplicationContext(),"短信验证码发送失败，请稍后重试",Toast.LENGTH_SHORT).show();
+                                Log.i("Register", "done: "+e);
+                            }
                         }
                     });
 
@@ -81,7 +84,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             case R.id.button:
                 spassword = password.getText().toString();
                 scode = code.getText().toString();
-                if(!spassword.equals("") && !scode.equals("") && !spassword1.equals("") && spassword.equals(spassword1)){
+                if(!spassword.equals("") && !scode.equals("") && !spassword1.equals("")){
+                    if(spassword.equals(spassword1)){
+
+                    }
                     User user = new User();
                     user.setUsername(sphone);
                     user.setMobilePhoneNumber(sphone);//设置手机号码（必填）
