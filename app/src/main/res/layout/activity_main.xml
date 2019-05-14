@@ -14,7 +14,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         hjm:tab_divider_background="#FF0000"
-        hjm:tab_divider_height="5dp"
         hjm:tab_font_size="6sp"
         hjm:tab_img_font_padding="0dp"
         hjm:tab_img_height="30dp"
