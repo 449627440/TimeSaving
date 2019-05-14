@@ -77,7 +77,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 }else{
                     Toast.makeText(this,"手机号码格式不正确",Toast.LENGTH_SHORT).show();
                 }
-
                 break;
             case R.id.button:
                 spassword = password.getText().toString();
