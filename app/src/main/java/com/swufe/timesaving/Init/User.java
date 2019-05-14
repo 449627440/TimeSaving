@@ -1,4 +1,4 @@
-package com.swufe.timesaving.init;
+package com.swufe.timesaving.Init;
 
 import cn.bmob.v3.BmobUser;
 

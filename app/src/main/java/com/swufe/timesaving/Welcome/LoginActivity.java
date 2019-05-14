@@ -1,10 +1,8 @@
 package com.swufe.timesaving.Welcome;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +13,7 @@ import android.widget.Toast;
 
 import com.swufe.timesaving.MainActivity;
 import com.swufe.timesaving.R;
-import com.swufe.timesaving.init.User;
+import com.swufe.timesaving.Init.User;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobUser;

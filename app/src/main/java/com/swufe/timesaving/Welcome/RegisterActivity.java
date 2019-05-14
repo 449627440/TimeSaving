@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.jkb.vcedittext.VerificationCodeEditText;
 import com.swufe.timesaving.R;
-import com.swufe.timesaving.init.User;
+import com.swufe.timesaving.Init.User;
 
 import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.exception.BmobException;
