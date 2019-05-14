@@ -14,8 +14,8 @@
     <!-- 边框的宽度和颜色颜色 -->
     <stroke
         android:width="5px"
-        android:color="#2BBBCB" />
+        android:color="#2B8BCB" />
 
     <!-- 背景色 -->
-    <solid android:color="#2BBBCB"></solid>
+    <solid android:color="#2B8BCB"></solid>
 </shape>
