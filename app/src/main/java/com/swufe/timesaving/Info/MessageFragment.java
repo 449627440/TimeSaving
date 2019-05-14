@@ -10,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.swufe.timesaving.Info.dummy.DummyContent;
-import com.swufe.timesaving.Info.dummy.DummyContent.DummyItem;
 import com.swufe.timesaving.R;
 
 /**
