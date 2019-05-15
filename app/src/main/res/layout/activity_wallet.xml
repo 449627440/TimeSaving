@@ -14,18 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline47"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"/>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -38,19 +27,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:contentInsetStart="0dp"
+        app:navigationIcon="?attr/homeAsUpIndicator"
         app:layout_constraintVertical_bias="0.0" >
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:text="钱包"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="12dp" />
-        </android.support.v7.widget.Toolbar>
+
+
+    </android.support.v7.widget.Toolbar>
+
 
     <ImageView
         android:id="@+id/imageView25"
@@ -130,6 +124,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
+
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
@@ -156,6 +151,8 @@
         app:layout_constraintStart_toStartOf="@+id/guideline42"
         app:layout_constraintTop_toTopOf="@+id/guideline10" />
 
+
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline16"
         android:layout_width="wrap_content"
@@ -166,6 +163,7 @@
         app:layout_constraintGuide_percent="0.32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="0dp"
@@ -186,6 +184,8 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline39"

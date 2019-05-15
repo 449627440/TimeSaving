@@ -35,9 +35,9 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Mine.WalletActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".Mine.WalletActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
