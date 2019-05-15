@@ -15,10 +15,10 @@
             android:id="@+id/toolbar2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentInsetStart="0dp"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            app:contentInsetStart="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,16 +34,22 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
         </android.support.v7.widget.Toolbar>
-
+        <ImageView
+            android:id="@+id/imageView0"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/main_header" />
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/mine_person"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toStartOf="@+id/guideline44"
             app:layout_constraintStart_toStartOf="@+id/guideline38"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            app:layout_constraintTop_toTopOf="@+id/guideline55" />
 
         <TextView
             android:id="@+id/textView"
@@ -59,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            app:layout_constraintTop_toTopOf="@+id/guideline55" />
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline2"
@@ -76,12 +82,13 @@
             android:id="@+id/imageView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:src="@drawable/mine_arrow"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+            app:layout_constraintTop_toTopOf="@+id/guideline55" />
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -430,6 +437,17 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintGuide_percent="0.18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.15"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
