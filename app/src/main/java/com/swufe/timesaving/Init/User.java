@@ -4,7 +4,7 @@ import cn.bmob.v3.BmobUser;
 
 public class User extends BmobUser {
     private String headPortrait;
-    private String nickname;
+    private String nickName;
 
     public String getHeadPortrait() {
         return headPortrait;
@@ -14,11 +14,11 @@ public class User extends BmobUser {
         this.headPortrait = headPortrait;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }
