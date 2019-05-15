@@ -31,8 +31,7 @@ public class MessageAdapter extends BaseAdapter {
 
     public final class Zujian{
         public ImageView imageView;
-        public TextView tv1;
-        public TextView tv2;
+        public TextView tv1,tv2,tv3,tv4;
     }
     @Override
     public int getCount() {
@@ -58,6 +57,8 @@ public class MessageAdapter extends BaseAdapter {
             zujian.imageView=convertView.findViewById(R.id.imageView4);
             zujian.tv1=convertView.findViewById(R.id.textView4);
             zujian.tv2=convertView.findViewById(R.id.textView5);
+            zujian.tv3=convertView.findViewById(R.id.textView0);
+            zujian.tv4=convertView.findViewById(R.id.textView1);
             convertView.setTag(zujian);
         }else {
             zujian=(Zujian)convertView.getTag();
@@ -68,6 +69,10 @@ public class MessageAdapter extends BaseAdapter {
         Log.i(TAG, "getView: "+data.get(position)[1]);
         Picasso.with(context).load(data.get(position)[2]).fit().into(zujian.imageView);
         Log.i(TAG, "getView: "+data.get(position)[2]);
+        zujian.tv3.setText(data.get(position)[3]);
+        Log.i(TAG, "getView: "+data.get(position)[3]);
+        zujian.tv4.setText(data.get(position)[4]);
+        Log.i(TAG, "getView: "+data.get(position)[4]);
         return convertView;
     }
 }

@@ -27,8 +27,8 @@ public class MessageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_message, container,false);
         list=new ArrayList<>();
-        list.add(new String[]{"盐假洁", "你赚了几个币？","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png"});
-        list.add(new String[]{"盐假洁", "给我转2个币吧","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png"});
+        list.add(new String[]{"盐假洁", "你赚了几个币？","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png","1小时前","2"});
+        list.add(new String[]{"盐假洁", "给我转2个币吧","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png","刚刚","1"});
         listView=view.findViewById(R.id.gridview);
         Log.i(TAG, "onCreateView: "+list);
         listView.setAdapter(new MessageAdapter(getActivity(),list));
