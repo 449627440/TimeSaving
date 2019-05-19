@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.GridView;
 
-import com.swufe.timesaving.Info.FriendAdapter;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.R;
 

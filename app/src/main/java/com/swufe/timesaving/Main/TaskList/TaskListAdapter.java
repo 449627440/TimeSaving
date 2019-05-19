@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.swufe.timesaving.Info.FriendAdapter;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.R;
 
