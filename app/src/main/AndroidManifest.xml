@@ -35,7 +35,8 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.TaskList.TaskListActivity"></activity>
+        <activity android:name=".Main.Task.TaskActivity"></activity>
+        <activity android:name=".Main.TaskList.TaskListActivity" />
         <activity
             android:name=".Main.Publish.PublishActivity"
             android:screenOrientation="portrait"
@@ -61,7 +62,7 @@
         <activity
             android:name=".Welcome.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
