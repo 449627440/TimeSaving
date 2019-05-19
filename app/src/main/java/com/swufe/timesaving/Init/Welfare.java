@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 
-public class Task extends BmobObject implements Serializable {
+public class Welfare extends BmobObject implements Serializable {
+
     private String name;
     private String type;
     private String peopleNum;
-    private String coinNum;
     private String detail;
     private String typeImage;
     private String startDate;
@@ -100,14 +100,6 @@ public class Task extends BmobObject implements Serializable {
 
     public void setPeopleNum(String peopleNum) {
         this.peopleNum = peopleNum;
-    }
-
-    public String getCoinNum() {
-        return coinNum;
-    }
-
-    public void setCoinNum(String coinNum) {
-        this.coinNum = coinNum;
     }
 
     public String getDetail() {
