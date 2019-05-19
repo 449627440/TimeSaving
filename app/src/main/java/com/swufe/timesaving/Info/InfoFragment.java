@@ -36,8 +36,9 @@ public class InfoFragment extends Fragment {
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new FriendFragment());
         fragments.add(new MessageFragment());
+        fragments.add(new NewsFragment());
 
-        TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getChildFragmentManager(), fragments, new String[]{"好友", "消息"});
+        TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getChildFragmentManager(), fragments, new String[]{"好友", "消息","新闻"});
         viewPager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);

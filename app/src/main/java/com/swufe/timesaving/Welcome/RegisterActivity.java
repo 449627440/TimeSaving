@@ -121,6 +121,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(this,"请把内容填写完整",Toast.LENGTH_SHORT).show();
                 }
                 break;
+            case R.id.tv_login:
+                finish();
+                break;
             default:
                 break;
         }
