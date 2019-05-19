@@ -1,4 +1,4 @@
-package com.swufe.timesaving.Info;
+package com.swufe.timesaving.Info.Message;
 
 import android.content.Context;
 import android.util.Log;

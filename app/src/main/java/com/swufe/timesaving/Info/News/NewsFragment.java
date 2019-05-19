@@ -1,4 +1,4 @@
-package com.swufe.timesaving.Info;
+package com.swufe.timesaving.Info.News;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,7 +17,8 @@ import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
-public class MessageFragment extends Fragment {
+public class NewsFragment extends Fragment {
+
     private View view;
     private GridView listView;
     private List<String[]> list;
@@ -25,13 +26,15 @@ public class MessageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.fragment_message, container,false);
+        view=inflater.inflate(R.layout.fragment_news, container,false);
         list=new ArrayList<>();
-        list.add(new String[]{"盐假洁", "你赚了几个币？","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png","1小时前","2"});
-        list.add(new String[]{"盐假洁", "给我转2个币吧","http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png","刚刚","1"});
+        list.add(new String[]{"1小时前", "随便写点吧","http://bmob-cdn-21576.b0.upaiyun.com/2019/05/16/7c3431e7406ef85880c9f17cceb1716a.jpg"});
+        list.add(new String[]{"1天前", "随便写点吧","http://bmob-cdn-21576.b0.upaiyun.com/2019/05/16/cfe617e04016456580289c3e5f227a15.jpg"});
+        list.add(new String[]{"1天前", "随便写点吧","http://bmob-cdn-21576.b0.upaiyun.com/2019/05/16/1ab8474740bb9add803e2411d556bb66.jpg"});
+        list.add(new String[]{"1天前", "随便写点吧","http://bmob-cdn-21576.b0.upaiyun.com/2019/05/16/81604bb640eb916380f9e9ec38966119.jpg"});
         listView=view.findViewById(R.id.gridview);
         Log.i(TAG, "onCreateView: "+list);
-        listView.setAdapter(new MessageAdapter(getActivity(),list));
+        listView.setAdapter(new NewsAdapter(getActivity(),list));
         return view;
     }
 

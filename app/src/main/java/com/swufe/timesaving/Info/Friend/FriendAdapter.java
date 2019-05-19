@@ -1,4 +1,4 @@
-package com.swufe.timesaving.Info;
+package com.swufe.timesaving.Info.Friend;
 
 import android.content.Context;
 import android.util.Log;
@@ -12,10 +12,10 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.swufe.timesaving.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class NewsAdapter extends BaseAdapter {
-
+public class FriendAdapter extends BaseAdapter {
 
     private List<String[]> data;
     private LayoutInflater layoutInflater;
@@ -23,14 +23,14 @@ public class NewsAdapter extends BaseAdapter {
     private static String TAG = "FriendAdapter";
 
 
-    public NewsAdapter(Context context, List<String[]> data){
+    public FriendAdapter(Context context, List<String[]> data){
         this.context = context;
         this.data=data;
         this.layoutInflater=LayoutInflater.from(context);
     }
 
     public final class Zujian{
-        public ImageView imageView;
+        public ImageView imageView,imageView1;
         public TextView tv1;
         public TextView tv2;
     }
@@ -51,23 +51,22 @@ public class NewsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup viewGroup) {
-        NewsAdapter.Zujian zujian = null;
+        Zujian zujian = null;
         if(convertView==null){
-            zujian = new NewsAdapter.Zujian();
-            convertView=layoutInflater.inflate(R.layout.fragment_news_adapter,null);
+            zujian = new Zujian();
+            convertView=layoutInflater.inflate(R.layout.fragment_friend_adapter,null);
             zujian.imageView=convertView.findViewById(R.id.imageView4);
-            zujian.tv1=convertView.findViewById(R.id.textView0);
+            zujian.imageView1=convertView.findViewById(R.id.imageView6);
+            zujian.tv1=convertView.findViewById(R.id.textView4);
             zujian.tv2=convertView.findViewById(R.id.textView5);
             convertView.setTag(zujian);
         }else {
-            zujian=(NewsAdapter.Zujian)convertView.getTag();
+            zujian=(Zujian)convertView.getTag();
         }
         zujian.tv1.setText(data.get(position)[0]);
         Log.i(TAG, "getView: "+data.get(position)[0]);
-        zujian.tv2.setText(data.get(position)[1]);
-        Log.i(TAG, "getView: "+data.get(position)[0]);
-        Picasso.with(context).load(data.get(position)[2]).fit().into(zujian.imageView);
-        Log.i(TAG, "getView: "+data.get(position)[2]);
+        Picasso.with(context).load(data.get(position)[1]).fit().into(zujian.imageView);
+        Log.i(TAG, "getView: "+data.get(position)[1]);
         return convertView;
     }
 }

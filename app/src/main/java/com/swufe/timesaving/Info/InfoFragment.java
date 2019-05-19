@@ -1,20 +1,18 @@
 package com.swufe.timesaving.Info;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hjm.bottomtabbar.BottomTabBar;
-import com.swufe.timesaving.Main.MainFragment;
-import com.swufe.timesaving.Mine.MineFragment;
+import com.swufe.timesaving.Info.Friend.FriendFragment;
+import com.swufe.timesaving.Info.Message.MessageFragment;
+import com.swufe.timesaving.Info.News.NewsFragment;
 import com.swufe.timesaving.R;
 
 import java.util.ArrayList;

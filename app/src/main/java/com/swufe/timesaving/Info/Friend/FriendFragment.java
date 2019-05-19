@@ -1,4 +1,4 @@
-package com.swufe.timesaving.Info;
+package com.swufe.timesaving.Info.Friend;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
