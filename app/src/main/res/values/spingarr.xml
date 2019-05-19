@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spingarr">
+        <item>关爱服务</item>
+        <item>家政服务</item>
+        <item>家庭维修</item>
+        <item>培训教育</item>
+        <item>医疗保健</item>
+        <item>文化艺术</item>
+        <item>定制服务</item>
+        <item>其他</item>
+    </string-array>
+</resources>

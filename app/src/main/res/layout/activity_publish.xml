@@ -534,12 +534,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/edittext2"
         android:inputType="text"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline104"
-        app:layout_constraintEnd_toStartOf="@+id/guideline109"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintStart_toStartOf="@+id/guideline91"
         app:layout_constraintTop_toTopOf="@+id/guideline103" />
 
@@ -682,6 +683,9 @@
 
     <Spinner
         android:id="@+id/spinner"
+        android:gravity="center"
+        android:spinnerMode="dropdown"
+        android:dropDownWidth="80dp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -691,7 +695,9 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline83"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintStart_toStartOf="@+id/guideline91"
-        app:layout_constraintTop_toTopOf="@+id/guideline85" />
+        app:layout_constraintTop_toTopOf="@+id/guideline85"
+        android:entries="@array/spingarr"
+        />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -759,19 +765,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintStart_toStartOf="@+id/guideline109"
         app:layout_constraintTop_toTopOf="@+id/guideline86" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="街道"
-        android:textColor="@color/colorPrimaryDark"
-        app:layout_constraintBottom_toTopOf="@+id/guideline104"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
-        app:layout_constraintStart_toStartOf="@+id/guideline109"
-        app:layout_constraintTop_toTopOf="@+id/guideline103" />
 
     <TextView
         android:id="@+id/textView21"
