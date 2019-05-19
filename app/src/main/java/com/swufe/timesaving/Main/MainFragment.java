@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.swufe.timesaving.Main.Publish.PublishActivity;
+import com.swufe.timesaving.Main.TaskList.TaskListActivity;
 import com.swufe.timesaving.R;
 
 public class MainFragment extends Fragment {
@@ -29,6 +30,14 @@ public class MainFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(getContext(), PublishActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), TaskListActivity.class);
                 startActivity(intent);
             }
         });
