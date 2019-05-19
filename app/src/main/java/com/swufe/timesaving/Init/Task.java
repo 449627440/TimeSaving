@@ -11,8 +11,61 @@ public class Task extends BmobObject implements Serializable {
     private String startTime;
     private String endTime;
     private String coinNum;
-    private String address;
     private String detail;
+    private String typeImage;
+    private String startDate;
+    private String startMonth;
+    private String detailAddress;
+    private String cityName;
+    private String provinceName;
+
+    public String getTypeImage() {
+        return typeImage;
+    }
+
+    public void setTypeImage(String typeImage) {
+        this.typeImage = typeImage;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getStartMonth() {
+        return startMonth;
+    }
+
+    public void setStartMonth(String startMonth) {
+        this.startMonth = startMonth;
+    }
+
+    public String getDetailAddress() {
+        return detailAddress;
+    }
+
+    public void setDetailAddress(String detailAddress) {
+        this.detailAddress = detailAddress;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
+    }
 
     public String getName() {
         return name;
@@ -60,14 +113,6 @@ public class Task extends BmobObject implements Serializable {
 
     public void setCoinNum(String coinNum) {
         this.coinNum = coinNum;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getDetail() {
