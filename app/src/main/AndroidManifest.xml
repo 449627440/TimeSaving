@@ -35,7 +35,8 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.Task.TaskActivity"></activity>
+        <activity android:name=".Mine.Setting.SettingActivity"></activity>
+        <activity android:name=".Main.Task.TaskActivity" />
         <activity android:name=".Main.TaskList.TaskListActivity" />
         <activity
             android:name=".Main.Publish.PublishActivity"
