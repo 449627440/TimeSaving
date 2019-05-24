@@ -36,8 +36,7 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.Methods.MethodActivity"></activity>
-        <activity android:name=".Main.GainTCCActivity" />
+        <activity android:name=".Main.GainTCCActivity"></activity>
         <activity
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"

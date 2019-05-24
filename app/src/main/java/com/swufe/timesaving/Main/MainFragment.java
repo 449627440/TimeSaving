@@ -53,6 +53,14 @@ public class MainFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), GainTCCActivity.class);
+                startActivity(intent);
+            }
+        });
         imageView4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
