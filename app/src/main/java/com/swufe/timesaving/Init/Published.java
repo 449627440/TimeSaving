@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 
-public class Welfare extends BmobObject implements Serializable {
-
+public class Published extends BmobObject implements Serializable {
+    private String username;
     private String name;
     private String type;
     private String peopleNum;
@@ -22,6 +22,14 @@ public class Welfare extends BmobObject implements Serializable {
     private String cityName;
     private String provinceName;
     private String districtName;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getDistrictName() {
         return districtName;

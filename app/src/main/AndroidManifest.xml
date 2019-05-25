@@ -43,7 +43,9 @@
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Mine.Task.TaskActivity" />
+        <activity android:name=".Mine.Task.TaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Main.Task.TaskActivity" />
         <activity
             android:name=".Main.Welfare.WelfareActivity"

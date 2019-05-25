@@ -91,6 +91,7 @@ public class PublishActivity extends AppCompatActivity {
                     welfare.setEndYear(String.valueOf(editText5.getText()));
                     welfare.setEndMonth(String.valueOf(editText6.getText()));
                     welfare.setEndDate(String.valueOf(editText7.getText()));
+                    welfare.setCoinNum(String.valueOf(editText8.getText()));
                     welfare.setProvinceName(String.valueOf(editText9.getText()));
                     welfare.setCityName(String.valueOf(editText10.getText()));
                     welfare.setDistrictName(String.valueOf(editText11.getText()));
