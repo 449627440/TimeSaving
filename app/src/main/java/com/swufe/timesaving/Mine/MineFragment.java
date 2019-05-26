@@ -10,10 +10,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.swufe.timesaving.Mine.Wallet.WalletActivity;
+import com.swufe.timesaving.Mine.Info.MyInfoActivity;
+import com.swufe.timesaving.Mine.Task.TaskActivity;
 import com.swufe.timesaving.R;
+import com.swufe.timesaving.Welcome.LoginActivity;
 
 import cn.bmob.v3.BmobUser;
 
@@ -22,7 +27,9 @@ public class MineFragment extends Fragment {
     private View view;
     private TextView textView;
     private Toolbar toolbar;
-    private ConstraintLayout constraintLayout;
+    private ConstraintLayout constraintLayout,constraintLayout1;
+    private Button button;
+    private ImageView imageView;
 
     @Nullable
     @Override
@@ -38,6 +45,34 @@ public class MineFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.setClass(getContext(), WalletActivity.class);
+                startActivity(intent);
+            }
+        });
+        constraintLayout1=view.findViewById(R.id.constraintLayout2);
+        constraintLayout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), TaskActivity.class);
+                startActivity(intent);
+            }
+        });
+        button=view.findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BmobUser.logOut();
+                Intent intent = new Intent();
+                intent.setClass(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageView=view.findViewById(R.id.imageView11);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), MyInfoActivity.class);
                 startActivity(intent);
             }
         });

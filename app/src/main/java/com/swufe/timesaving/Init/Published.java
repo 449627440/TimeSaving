@@ -4,8 +4,9 @@ import java.io.Serializable;
 
 import cn.bmob.v3.BmobObject;
 
-public class Task extends BmobObject implements Serializable {
-    private Boolean isReceived;
+public class Published extends BmobObject implements Serializable {
+    private String username;
+    private String iD;
     private String name;
     private String type;
     private String peopleNum;
@@ -22,6 +23,14 @@ public class Task extends BmobObject implements Serializable {
     private String cityName;
     private String provinceName;
     private String districtName;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getDistrictName() {
         return districtName;
@@ -151,11 +160,11 @@ public class Task extends BmobObject implements Serializable {
         this.endYear = endYear;
     }
 
-    public Boolean getReceived() {
-        return isReceived;
+    public String getiD() {
+        return iD;
     }
 
-    public void setReceived(Boolean received) {
-        isReceived = received;
+    public void setiD(String iD) {
+        this.iD = iD;
     }
 }

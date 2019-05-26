@@ -1,14 +1,18 @@
 package com.swufe.timesaving.Main.Welfare;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.Init.Welfare;
+import com.swufe.timesaving.Main.Task.TaskActivity;
+import com.swufe.timesaving.Main.TaskList.TaskListActivity;
 import com.swufe.timesaving.Main.TaskList.TaskListAdapter;
 import com.swufe.timesaving.R;
 
@@ -36,9 +40,18 @@ public class WelfareActivity extends AppCompatActivity {
             @Override
             public void done(BmobQueryResult<Welfare> bmobQueryResult, BmobException e) {
                 if(e==null){
-                    List<Welfare> list = bmobQueryResult.getResults();
+                    final List<Welfare> list = bmobQueryResult.getResults();
                     if(list!=null && list.size()>0){
                         listView.setAdapter(new WelfareAdapter(getBaseContext(),list));
+                        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                Intent intent = new Intent();
+                                intent.setClass(WelfareActivity.this, WelfareTaskActivity.class);
+                                intent.putExtra("list",list.get(i));
+                                startActivity(intent);
+                            }
+                        });
                     }else{
                         Log.i(TAG, "done: 查询成功，无数据返回");
                     }
