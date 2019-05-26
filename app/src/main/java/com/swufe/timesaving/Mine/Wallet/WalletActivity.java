@@ -1,4 +1,4 @@
-package com.swufe.timesaving.Mine;
+package com.swufe.timesaving.Mine.Wallet;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

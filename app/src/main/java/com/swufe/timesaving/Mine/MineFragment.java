@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.swufe.timesaving.Mine.Wallet.WalletActivity;
 import com.swufe.timesaving.R;
 
 import cn.bmob.v3.BmobUser;

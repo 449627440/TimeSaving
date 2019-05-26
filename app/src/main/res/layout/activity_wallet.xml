@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".Mine.WalletActivity">
+    tools:context=".Mine.Wallet.WalletActivity">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout4"

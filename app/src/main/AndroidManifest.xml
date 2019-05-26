@@ -36,7 +36,8 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mine.Info.MyInfoActivity"></activity>
+        <activity android:name=".Mine.Wallet.FinishedTask.FinishedTaskActivity"></activity>
+        <activity android:name=".Mine.Info.MyInfoActivity" />
         <activity android:name=".Main.Methods.PersonInfo.PersonInfoActivity" />
         <activity android:name=".Main.GainTCCActivity" />
         <activity
@@ -59,7 +60,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".Mine.WalletActivity"
+            android:name=".Mine.Wallet.WalletActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

@@ -143,13 +143,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline125"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.92"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
         android:id="@+id/guideline89"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.94"
+        app:layout_constraintGuide_percent="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline126"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.81"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -204,7 +226,7 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintGuide_percent="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -681,6 +703,20 @@
         app:layout_constraintTop_toTopOf="@+id/guideline104" />
 
     <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="区块地址："
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline126"
+        app:layout_constraintEnd_toStartOf="@+id/guideline91"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/guideline93"
+        app:layout_constraintTop_toTopOf="@+id/guideline89" />
+
+    <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -960,13 +996,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape_button"
-        android:text="领取"
+        android:text="已领取"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline90"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline92"
-        app:layout_constraintTop_toTopOf="@+id/guideline105" />
+        app:layout_constraintTop_toTopOf="@+id/guideline105"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/add_content"
@@ -975,15 +1013,40 @@
         android:layout_marginBottom="8dp"
         android:enabled="true"
         android:gravity="top"
-        android:textColor="@color/colorPrimaryDark"
 
-        android:text="这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容"
         android:maxLines="10"
         android:minLines="8"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline105"
+        android:text="这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toTopOf="@+id/guideline89"
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintStart_toStartOf="@+id/guideline92"
         app:layout_constraintTop_toTopOf="@+id/guideline102"></TextView>
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline126"
+        app:layout_constraintEnd_toStartOf="@+id/guideline93"
+        app:layout_constraintStart_toStartOf="@+id/guideline92"
+        app:layout_constraintTop_toTopOf="@+id/guideline89"
+        app:srcCompat="@drawable/finishedtask_blockchain" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="7185c342c8c298f55280a88d95d02685"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline105"
+        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintStart_toStartOf="@+id/guideline92"
+        app:layout_constraintTop_toTopOf="@+id/guideline126" />
 
 </android.support.constraint.ConstraintLayout>
