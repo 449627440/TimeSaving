@@ -6,6 +6,7 @@ import cn.bmob.v3.BmobObject;
 
 public class Published extends BmobObject implements Serializable {
     private String username;
+    private String iD;
     private String name;
     private String type;
     private String peopleNum;
@@ -157,5 +158,13 @@ public class Published extends BmobObject implements Serializable {
 
     public void setEndYear(String endYear) {
         this.endYear = endYear;
+    }
+
+    public String getiD() {
+        return iD;
+    }
+
+    public void setiD(String iD) {
+        this.iD = iD;
     }
 }

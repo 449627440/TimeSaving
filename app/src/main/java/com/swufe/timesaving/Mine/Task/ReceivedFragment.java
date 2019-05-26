@@ -1,5 +1,6 @@
 package com.swufe.timesaving.Mine.Task;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.swufe.timesaving.Init.Published;
@@ -39,10 +41,19 @@ public class ReceivedFragment extends Fragment {
         query.setLimit(50);
         query.findObjects(new FindListener<Received>() {
             @Override
-            public void done(List<Received> list, BmobException e) {
+            public void done(final List<Received> list, BmobException e) {
                 if(e==null){
                     Log.i(TAG, "onCreateView: "+list);
                     listView.setAdapter(new ReceivedAdapter(getActivity(),list));
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Intent intent=new Intent();
+                            intent.setClass(getContext(),ReceivedActivity.class);
+                            intent.putExtra("list",list.get(i));
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
         });
@@ -53,5 +64,31 @@ public class ReceivedFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        BmobQuery<Received> query = new BmobQuery<>();
+        query.addWhereEqualTo("username", String.valueOf(BmobUser.getCurrentUser().getUsername()));
+        query.setLimit(50);
+        query.findObjects(new FindListener<Received>() {
+            @Override
+            public void done(final List<Received> list, BmobException e) {
+                if(e==null){
+                    Log.i(TAG, "onCreateView: "+list);
+                    listView.setAdapter(new ReceivedAdapter(getActivity(),list));
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                            Intent intent=new Intent();
+                            intent.setClass(getContext(),ReceivedActivity.class);
+                            intent.putExtra("list",list.get(i));
+                            startActivity(intent);
+                        }
+                    });
+                }
+            }
+        });
     }
 }

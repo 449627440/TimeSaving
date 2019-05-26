@@ -115,6 +115,7 @@ public class TaskActivity extends AppCompatActivity {
                                 received.setDetailAddress(list.getDetailAddress());
                                 received.setDetail(list.getDetail());
                                 received.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
+                                received.setiD(list.getObjectId());
                                 received.save(new SaveListener<String>() {
                                     @Override
                                     public void done(String s, BmobException e) {

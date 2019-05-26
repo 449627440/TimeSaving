@@ -36,10 +36,19 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.Welfare.WelfareTaskActivity"
+        <activity android:name=".Mine.Task.ReceivedActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" ></activity>
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".Mine.Task.PublishedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"/>
+        <activity
+            android:name=".Main.Welfare.WelfareTaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Mine.Info.MyInfoActivity"
             android:screenOrientation="portrait"

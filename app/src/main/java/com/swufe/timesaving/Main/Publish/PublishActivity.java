@@ -17,6 +17,7 @@ import com.swufe.timesaving.Init.User;
 import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
@@ -210,10 +211,12 @@ public class PublishActivity extends AppCompatActivity {
 
 
                         task.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
+                        task.setReceived(false);
                         task.save(new SaveListener<String>() {
                             @Override
                             public void done(String s, BmobException e) {
                                 if(e==null){
+                                    published.setiD(task.getObjectId());
                                     published.save(new SaveListener<String>() {
                                         @Override
                                         public void done(String s, BmobException e) {
