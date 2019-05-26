@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.swufe.timesaving.Init.Published;
+import com.swufe.timesaving.Init.Received;
 import com.swufe.timesaving.Mine.Task.PublishedAdapter;
 import com.swufe.timesaving.R;
 
@@ -33,15 +34,15 @@ public class ReceivedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_published, container,false);
         listView=view.findViewById(R.id.gridview);
-        BmobQuery<Published> query = new BmobQuery<>();
-        query.addWhereEqualTo("username", String.valueOf(BmobUser.getCurrentUser()));
+        BmobQuery<Received> query = new BmobQuery<>();
+        query.addWhereEqualTo("username", String.valueOf(BmobUser.getCurrentUser().getUsername()));
         query.setLimit(50);
-        query.findObjects(new FindListener<Published>() {
+        query.findObjects(new FindListener<Received>() {
             @Override
-            public void done(List<Published> list, BmobException e) {
+            public void done(List<Received> list, BmobException e) {
                 if(e==null){
                     Log.i(TAG, "onCreateView: "+list);
-                    listView.setAdapter(new PublishedAdapter(getActivity(),list));
+                    listView.setAdapter(new ReceivedAdapter(getActivity(),list));
                 }
             }
         });

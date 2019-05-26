@@ -39,7 +39,7 @@ public class GainTCCActivity extends AppCompatActivity {
         collapsingToolbarLayout.setTitle("TCC");
 
         webView = findViewById(R.id.webView);
-        webView.loadUrl("http://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/s7865/s8417/");
+        webView.loadUrl("http://tool.oschina.net/encrypt?type=2");
         webView.setWebViewClient(new WebViewClient(){
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {

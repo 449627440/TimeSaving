@@ -34,7 +34,7 @@ public class PublishedFragment extends Fragment {
         view=inflater.inflate(R.layout.fragment_published, container,false);
         listView=view.findViewById(R.id.gridview);
         BmobQuery<Published> query = new BmobQuery<>();
-        query.addWhereEqualTo("username", String.valueOf(BmobUser.getCurrentUser()));
+        query.addWhereEqualTo("username", String.valueOf(BmobUser.getCurrentUser().getUsername()));
         query.setLimit(50);
         query.findObjects(new FindListener<Published>() {
             @Override

@@ -36,24 +36,37 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mine.Info.MyInfoActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Main.Methods.PersonInfo.PersonInfoActivity"
+        <activity android:name=".Main.Welfare.WelfareTaskActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".Main.GainTCCActivity"
+            android:windowSoftInputMode="adjustPan" ></activity>
+        <activity
+            android:name=".Mine.Info.MyInfoActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Main.Methods.PersonInfo.PersonInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Main.GainTCCActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Mine.Task.TaskActivity"
+        <activity
+            android:name=".Mine.Task.TaskActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Main.Task.TaskActivity" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Main.Task.TaskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Main.Welfare.WelfareActivity"
             android:screenOrientation="portrait"

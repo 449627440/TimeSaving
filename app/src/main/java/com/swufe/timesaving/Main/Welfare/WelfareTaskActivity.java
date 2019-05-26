@@ -1,8 +1,5 @@
-package com.swufe.timesaving.Main.Task;
+package com.swufe.timesaving.Main.Welfare;
 
-import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -15,22 +12,17 @@ import android.widget.Toast;
 import com.swufe.timesaving.Init.Received;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.Init.User;
+import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.SaveListener;
 import cn.bmob.v3.listener.UpdateListener;
 
-public class TaskActivity extends AppCompatActivity {
-
+public class WelfareTaskActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private Task list;
+    private Welfare list;
     private TextView textView1,textView2,textView3,textView4,textView5;
     private TextView textView6,textView7,textView8,textView9,textView10;
     private TextView textView11,textView12,textView13,textView14,textView15;
@@ -41,7 +33,7 @@ public class TaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task);
+        setContentView(R.layout.activity_welfare_task);
         toolbar=findViewById(R.id.toolbar6);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +42,7 @@ public class TaskActivity extends AppCompatActivity {
             }
         });
 
-        list= (Task) getIntent().getSerializableExtra("list");
+        list= (Welfare) getIntent().getSerializableExtra("list");
         textView1=findViewById(R.id.name);
         textView1.setText(list.getName());
         textView2=findViewById(R.id.spinner);

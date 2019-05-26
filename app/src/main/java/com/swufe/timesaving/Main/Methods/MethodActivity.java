@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.swufe.timesaving.Main.Methods.PersonInfo.PersonInfoActivity;
+import com.swufe.timesaving.Main.TaskList.TaskListActivity;
 import com.swufe.timesaving.R;
 
 public class MethodActivity extends AppCompatActivity {
@@ -26,6 +27,15 @@ public class MethodActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MethodActivity.this, TaskListActivity.class);
+                startActivity(intent);
             }
         });
 

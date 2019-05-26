@@ -5,7 +5,7 @@ import java.io.Serializable;
 import cn.bmob.v3.BmobObject;
 
 public class Welfare extends BmobObject implements Serializable {
-
+    private Boolean isReceived;
     private String name;
     private String type;
     private String peopleNum;
@@ -149,5 +149,13 @@ public class Welfare extends BmobObject implements Serializable {
 
     public void setEndYear(String endYear) {
         this.endYear = endYear;
+    }
+
+    public Boolean getReceived() {
+        return isReceived;
+    }
+
+    public void setReceived(Boolean received) {
+        isReceived = received;
     }
 }
