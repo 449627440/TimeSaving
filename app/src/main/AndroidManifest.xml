@@ -63,9 +63,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Mine.Wallet.FinishedTask.FinishedTaskActivity"></activity>
-        <activity android:name=".Mine.Info.MyInfoActivity" />
-        <activity android:name=".Main.Methods.PersonInfo.PersonInfoActivity" />
-        <activity android:name=".Main.GainTCCActivity" />
         <activity
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"
