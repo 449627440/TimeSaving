@@ -36,7 +36,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Bmob.initialize(this, "273aad069f5dbbe226e9278c273d2363");
 
         User bmobUser = BmobUser.getCurrentUser(User.class);
         if(bmobUser != null){

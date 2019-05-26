@@ -36,14 +36,16 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mine.Task.ReceivedActivity"
+        <activity
+            android:name=".Mine.Task.ReceivedActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
-        <activity android:name=".Mine.Task.PublishedActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Mine.Task.PublishedActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"/>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Main.Welfare.WelfareTaskActivity"
             android:screenOrientation="portrait"
@@ -62,7 +64,7 @@
             android:name=".Main.GainTCCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Mine.Wallet.FinishedTask.FinishedTaskActivity"></activity>
+        <activity android:name=".Mine.Wallet.FinishedTask.FinishedTaskActivity" />
         <activity
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"
@@ -110,6 +112,12 @@
             android:name=".Welcome.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".Launch.LaunchActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -117,5 +125,6 @@
             </intent-filter>
         </activity>
     </application>
+
 
 </manifest>
