@@ -11,6 +11,7 @@ import android.widget.ImageView;
 
 import com.swufe.timesaving.Blockchain.BlockchainActivity;
 import com.swufe.timesaving.Init.Welfare;
+import com.swufe.timesaving.Main.Methods.MethodActivity;
 import com.swufe.timesaving.Main.Methods.PersonInfo.PersonInfoActivity;
 import com.swufe.timesaving.Main.Publish.PublishActivity;
 import com.swufe.timesaving.Main.TaskList.TaskListActivity;
@@ -58,7 +59,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(getContext(), PersonInfoActivity.class);
+                intent.setClass(getContext(), MethodActivity.class);
                 startActivity(intent);
             }
         });

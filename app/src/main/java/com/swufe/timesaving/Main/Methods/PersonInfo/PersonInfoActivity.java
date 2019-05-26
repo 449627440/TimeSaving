@@ -29,17 +29,27 @@ public class PersonInfoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_person_info);
-
+        final User user = BmobUser.getCurrentUser(User.class);
         editText1=findViewById(R.id.editText4);
+        editText1.setText(user.getName());
         editText2=findViewById(R.id.spinner);
+        editText2.setText(user.getIDCard());
         editText3=findViewById(R.id.editText2);
+        editText3.setText(user.getAge());
         editText4=findViewById(R.id.editText17);
+        editText4.setText(user.getEmergentPerson());
         editText5=findViewById(R.id.editText12);
+        editText5.setText(user.getEmergentPhone());
         editText6=findViewById(R.id.editText13);
+        editText6.setText(user.getProvince());
         editText7=findViewById(R.id.editText14);
+        editText7.setText(user.getCity());
         editText8=findViewById(R.id.editText15);
+        editText8.setText(user.getCounty());
         editText9=findViewById(R.id.editText16);
+        editText9.setText(user.getStreet());
         editText10=findViewById(R.id.add_content);
+        editText10.setText(user.getBriefIntro());
         button1=findViewById(R.id.button);
         button2=findViewById(R.id.button3);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +70,6 @@ public class PersonInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.i("PublishActivity", "onClick: " + editText8.getText());
-                User user = BmobUser.getCurrentUser(User.class);
                 user.setName(String.valueOf(editText1.getText()));
                 user.setIDCard(String.valueOf(editText2.getText()));
                 user.setAge(String.valueOf(editText3.getText()));
@@ -79,7 +88,7 @@ public class PersonInfoActivity extends AppCompatActivity {
                             finish();
                         }else {
                             Log.i("PersonInfoActivity", "done: "+e);
-                            Toast.makeText(getApplicationContext(),"请检查是否填写正确",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"请检查是否连接网络",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

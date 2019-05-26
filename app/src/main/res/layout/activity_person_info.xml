@@ -608,8 +608,9 @@
 
     <EditText
         android:id="@+id/spinner"
-        android:gravity="center"
+        android:textSize="14sp"
         android:dropDownWidth="80dp"
+        android:inputType="number"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -620,7 +621,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline95"
         app:layout_constraintStart_toStartOf="@+id/guideline91"
         app:layout_constraintTop_toTopOf="@+id/guideline85"
-        android:entries="@array/spingarr"
         />
 
     <TextView

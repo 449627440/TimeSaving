@@ -11,8 +11,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.swufe.timesaving.Mine.Info.MyInfoActivity;
 import com.swufe.timesaving.Mine.Task.TaskActivity;
 import com.swufe.timesaving.R;
 import com.swufe.timesaving.Welcome.LoginActivity;
@@ -26,6 +28,7 @@ public class MineFragment extends Fragment {
     private Toolbar toolbar;
     private ConstraintLayout constraintLayout,constraintLayout1;
     private Button button;
+    private ImageView imageView;
 
     @Nullable
     @Override
@@ -60,6 +63,15 @@ public class MineFragment extends Fragment {
                 BmobUser.logOut();
                 Intent intent = new Intent();
                 intent.setClass(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+        imageView=view.findViewById(R.id.imageView11);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), MyInfoActivity.class);
                 startActivity(intent);
             }
         });
