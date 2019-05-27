@@ -23,6 +23,15 @@ public class Published extends BmobObject implements Serializable {
     private String cityName;
     private String provinceName;
     private String districtName;
+    private String passwd;
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
+    }
 
     public String getUsername() {
         return username;
