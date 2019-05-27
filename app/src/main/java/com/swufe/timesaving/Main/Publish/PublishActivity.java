@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.swufe.timesaving.Init.Published;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.Init.User;
+import com.swufe.timesaving.Init.Wallet;
 import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
@@ -25,6 +26,7 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
+import cn.bmob.v3.listener.UpdateListener;
 
 public class PublishActivity extends AppCompatActivity {
 
@@ -118,6 +120,7 @@ public class PublishActivity extends AppCompatActivity {
                     if(String.valueOf(editText8.getText()).equals("0")){
                         final Welfare welfare = new Welfare();
                         final Published published = new Published();
+                        final Wallet wallet = new Wallet();
                         welfare.setName(String.valueOf(editText.getText()));
                         welfare.setType(spin);
                         welfare.setPeopleNum(String.valueOf(editText1.getText()));
@@ -160,6 +163,27 @@ public class PublishActivity extends AppCompatActivity {
                         welfare.setPasswd(MD5(info));
                         welfare.setReceived(false);
 
+                        wallet.setUsername(BmobUser.getCurrentUser(User.class).getUsername());
+                        wallet.setName(String.valueOf(editText.getText()));
+                        wallet.setType(spin);
+                        wallet.setPeopleNum(String.valueOf(editText1.getText()));
+                        wallet.setStartYear(String.valueOf(editText2.getText()));
+                        wallet.setStartMonth(String.valueOf(editText3.getText()));
+                        wallet.setStartDate(String.valueOf(editText4.getText()));
+                        wallet.setEndYear(String.valueOf(editText5.getText()));
+                        wallet.setEndMonth(String.valueOf(editText6.getText()));
+                        wallet.setEndDate(String.valueOf(editText7.getText()));
+                        wallet.setCoinNum(String.valueOf(editText8.getText()));
+                        wallet.setProvinceName(String.valueOf(editText9.getText()));
+                        wallet.setCityName(String.valueOf(editText10.getText()));
+                        wallet.setDistrictName(String.valueOf(editText11.getText()));
+                        wallet.setDetailAddress(String.valueOf(editText12.getText()));
+                        wallet.setDetail(String.valueOf(editText13.getText()));
+                        wallet.setPasswd(MD5(info));
+                        wallet.setTrueCoin(String.valueOf(editText8.getText()));
+                        wallet.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
+
+
                         welfare.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         published.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         welfare.save(new SaveListener<String>() {
@@ -171,9 +195,20 @@ public class PublishActivity extends AppCompatActivity {
                                         @Override
                                         public void done(String s, BmobException e) {
                                             if(e==null){
-                                                Log.i("PublishActivity", "done: 成功");
-                                                Toast.makeText(getApplicationContext(),"提交成功，等待小伙伴们参与哦~",Toast.LENGTH_SHORT).show();
-                                                finish();
+                                                wallet.setiD(welfare.getObjectId());
+                                                wallet.save(new SaveListener<String>() {
+                                                    @Override
+                                                    public void done(String s, BmobException e) {
+                                                        if(e==null){
+                                                            Log.i("PublishActivity", "done: 成功");
+                                                            Toast.makeText(getApplicationContext(),"提交成功，等待小伙伴们参与哦~",Toast.LENGTH_SHORT).show();
+                                                            finish();
+                                                        }else {
+                                                            Log.i("PublishActivity", "done: "+e);
+                                                            Toast.makeText(getApplicationContext(),"请检查是否填写正确",Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    }
+                                                });
                                             }else {
                                                 Log.i("PublishActivity", "done: "+e);
                                                 Toast.makeText(getApplicationContext(),"请检查是否填写正确",Toast.LENGTH_SHORT).show();
@@ -189,6 +224,7 @@ public class PublishActivity extends AppCompatActivity {
                     }else {
                         final Task task = new Task();
                         final Published published=new Published();
+                        final Wallet wallet=new Wallet();
                         task.setName(String.valueOf(editText.getText()));
                         task.setType(spin);
                         task.setPeopleNum(String.valueOf(editText1.getText()));
@@ -231,6 +267,25 @@ public class PublishActivity extends AppCompatActivity {
                         published.setDetail(String.valueOf(editText13.getText()));
                         published.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
 
+                        wallet.setUsername(BmobUser.getCurrentUser(User.class).getUsername());
+                        wallet.setName(String.valueOf(editText.getText()));
+                        wallet.setType(spin);
+                        wallet.setPeopleNum(String.valueOf(editText1.getText()));
+                        wallet.setStartYear(String.valueOf(editText2.getText()));
+                        wallet.setStartMonth(String.valueOf(editText3.getText()));
+                        wallet.setStartDate(String.valueOf(editText4.getText()));
+                        wallet.setEndYear(String.valueOf(editText5.getText()));
+                        wallet.setEndMonth(String.valueOf(editText6.getText()));
+                        wallet.setEndDate(String.valueOf(editText7.getText()));
+                        wallet.setCoinNum(String.valueOf(editText8.getText()));
+                        wallet.setProvinceName(String.valueOf(editText9.getText()));
+                        wallet.setCityName(String.valueOf(editText10.getText()));
+                        wallet.setDistrictName(String.valueOf(editText11.getText()));
+                        wallet.setDetailAddress(String.valueOf(editText12.getText()));
+                        wallet.setDetail(String.valueOf(editText13.getText()));
+                        wallet.setPasswd(MD5(info));
+                        wallet.setTrueCoin("-"+editText8.getText());
+                        wallet.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
 
                         task.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         task.setReceived(false);
@@ -243,9 +298,25 @@ public class PublishActivity extends AppCompatActivity {
                                         @Override
                                         public void done(String s, BmobException e) {
                                             if(e==null){
-                                                Log.i("PublishActivity", "done: 成功");
-                                                Toast.makeText(getApplicationContext(),"提交成功，等待小伙伴们参与哦~",Toast.LENGTH_SHORT).show();
-                                                finish();
+                                                wallet.setiD(task.getObjectId());
+                                                wallet.save(new SaveListener<String>() {
+                                                    @Override
+                                                    public void done(String s, BmobException e) {
+                                                        User user=BmobUser.getCurrentUser(User.class);
+                                                        user.setCoin(Integer.valueOf(user.getCoin().intValue()-Integer.parseInt(editText8.getText().toString())));
+                                                        user.update(new UpdateListener() {
+                                                            @Override
+                                                            public void done(BmobException e) {
+                                                                if(e==null){
+                                                                    Log.i("PublishActivity", "done: 成功");
+                                                                    Toast.makeText(getApplicationContext(),"提交成功，等待小伙伴们参与哦~",Toast.LENGTH_SHORT).show();
+                                                                    finish();
+                                                                }
+                                                            }
+                                                        });
+
+                                                    }
+                                                });
                                             }else {
                                                 Log.i("PublishActivity", "done: "+e);
                                                 Toast.makeText(getApplicationContext(),"请检查是否填写正确",Toast.LENGTH_SHORT).show();

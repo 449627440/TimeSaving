@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.swufe.timesaving.Init.Received;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.Init.User;
+import com.swufe.timesaving.Init.Wallet;
 import com.swufe.timesaving.R;
 
 import java.util.ArrayList;
@@ -100,6 +101,7 @@ public class TaskActivity extends AppCompatActivity {
                             @Override
                             public void done(BmobException e) {
                                 Received received = new Received();
+                                Wallet wallet = new Wallet();
                                 received.setUsername(BmobUser.getCurrentUser(User.class).getUsername());
                                 received.setName(list.getName());
                                 received.setType(list.getType());
@@ -124,6 +126,41 @@ public class TaskActivity extends AppCompatActivity {
                                     public void done(String s, BmobException e) {
                                         if(e==null){
 
+                                        }
+                                    }
+                                });
+                                wallet.setUsername(BmobUser.getCurrentUser(User.class).getUsername());
+                                wallet.setName(list.getName());
+                                wallet.setType(list.getType());
+                                wallet.setPeopleNum(list.getPeopleNum());
+                                wallet.setStartYear(list.getStartYear());
+                                wallet.setStartMonth(list.getStartMonth());
+                                wallet.setStartDate(list.getStartDate());
+                                wallet.setEndYear(list.getEndYear());
+                                wallet.setEndMonth(list.getEndMonth());
+                                wallet.setEndDate(list.getEndDate());
+                                wallet.setCoinNum(list.getCoinNum());
+                                wallet.setProvinceName(list.getProvinceName());
+                                wallet.setCityName(list.getCityName());
+                                wallet.setDistrictName(list.getDistrictName());
+                                wallet.setDetailAddress(list.getDetailAddress());
+                                wallet.setDetail(list.getDetail());
+                                wallet.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
+                                wallet.setiD(list.getObjectId());
+                                wallet.setPasswd(list.getPasswd());
+                                wallet.setTrueCoin("+"+list.getCoinNum());
+                                wallet.save(new SaveListener<String>() {
+                                    @Override
+                                    public void done(String s, BmobException e) {
+                                        if(e==null){
+                                            User user = BmobUser.getCurrentUser(User.class);
+                                            user.setCoin(Integer.valueOf(user.getCoin().intValue()+Integer.parseInt(list.getCoinNum())));
+                                            user.update(new UpdateListener() {
+                                                @Override
+                                                public void done(BmobException e) {
+
+                                                }
+                                            });
                                         }
                                     }
                                 });
