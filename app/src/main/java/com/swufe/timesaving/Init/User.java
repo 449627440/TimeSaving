@@ -15,13 +15,13 @@ public class User extends BmobUser {
     private String county;
     private String street;
     private String briefIntro;
-    private String coin;
+    private Number coin;
 
-    public String getCoin() {
+    public Number getCoin() {
         return coin;
     }
 
-    public void setCoin(String coin) {
+    public void setCoin(Number coin) {
         this.coin = coin;
     }
 
