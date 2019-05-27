@@ -276,6 +276,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline129"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
         android:id="@+id/guideline109"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -536,13 +548,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
+        android:gravity="center"
         android:text="15"
         android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:gravity="center"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline87"
-        app:layout_constraintEnd_toStartOf="@+id/textView25"
+        app:layout_constraintEnd_toStartOf="@+id/guideline99"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toTopOf="@+id/guideline84" />
 
@@ -551,13 +563,13 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="2dp"
-        android:text="15"
-        android:textStyle="bold"
-        android:textColor="@color/colorPrimaryDark"
         android:gravity="center"
+        android:text="15"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline101"
-        app:layout_constraintEnd_toStartOf="@+id/textView25"
+        app:layout_constraintEnd_toStartOf="@+id/guideline99"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         app:layout_constraintTop_toTopOf="@+id/guideline87" />
 
@@ -780,8 +792,9 @@
         android:text="日"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline101"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
-        app:layout_constraintStart_toStartOf="@+id/guideline99"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editText11"
         app:layout_constraintTop_toTopOf="@+id/guideline87" />
 
     <TextView
@@ -821,10 +834,12 @@
         android:id="@+id/textView31"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="区县"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline103"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline109"
         app:layout_constraintTop_toTopOf="@+id/guideline86" />
 
@@ -833,11 +848,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="街道"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline104"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline109"
         app:layout_constraintTop_toTopOf="@+id/guideline103" />
 
@@ -871,7 +888,8 @@
         android:text="日"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline87"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline99"
         app:layout_constraintTop_toTopOf="@+id/guideline84" />
 
@@ -1010,17 +1028,18 @@
         android:id="@+id/add_content"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+
         android:enabled="true"
         android:gravity="top"
-
         android:maxLines="10"
         android:minLines="8"
         android:scrollbars="vertical"
         android:text="这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容这里是详细描述的主要内容"
         android:textColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/guideline89"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
         app:layout_constraintStart_toStartOf="@+id/guideline92"
         app:layout_constraintTop_toTopOf="@+id/guideline102"></TextView>
 
@@ -1040,12 +1059,14 @@
         android:id="@+id/textView48"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:text="7185c342c8c298f55280a88d95d02685"
-        android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toTopOf="@+id/guideline105"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
         app:layout_constraintStart_toStartOf="@+id/guideline92"
         app:layout_constraintTop_toTopOf="@+id/guideline126" />
 
