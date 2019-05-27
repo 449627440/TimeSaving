@@ -36,10 +36,12 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Info.News.NewsActivity"
+        <activity android:name=".Mine.Wallet.FinishedActivity"></activity>
+        <activity
+            android:name=".Info.News.NewsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".Mine.Task.ReceivedActivity"
             android:screenOrientation="portrait"
@@ -68,7 +70,6 @@
             android:name=".Main.GainTCCActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Mine.Wallet.FinishedTask.FinishedTaskActivity" />
         <activity
             android:name=".Blockchain.BlockchainActivity"
             android:screenOrientation="portrait"
@@ -115,7 +116,7 @@
         <activity
             android:name=".Welcome.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Launch.LaunchActivity"
             android:label="@string/app_name"

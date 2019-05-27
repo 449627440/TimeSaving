@@ -92,6 +92,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         user.setMobilePhoneNumber(sphone);//设置手机号码（必填）
                         user.setPassword(spassword);
                         user.setNickName("时间管理");
+                        user.setCoin(10);
                         user.setHeadPortrait("http://bmob-cdn-21576.b0.upaiyun.com/2018/09/22/f0143a5440f171ee8047f13e5fd528c7.png");
                         user.signOrLogin(scode, new SaveListener<User>() {
                             @Override
