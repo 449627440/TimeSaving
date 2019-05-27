@@ -17,6 +17,10 @@ import com.swufe.timesaving.Init.User;
 import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -147,6 +151,15 @@ public class PublishActivity extends AppCompatActivity {
                         published.setDetailAddress(String.valueOf(editText12.getText()));
                         published.setDetail(String.valueOf(editText13.getText()));
 
+                        String info = "任务名称："+editText.getText()+"；任务类型："+spin+"；所需人数："+editText1.getText()+"人；任务时间：始：";
+                        info = info+editText2.getText()+"年"+editText3.getText()+"月"+editText4.getText()+"日；终：";
+                        info = info+editText5.getText()+"年"+editText6.getText()+"月"+editText7.getText()+"日；悬赏时间币：";
+                        info = info+editText8.getText()+"TCC；服务地点"+editText9.getText()+"省"+editText10.getText()+"市"+editText11.getText()+"区县";
+                        info = info+editText12.getText()+"；详细说明："+editText13.getText();
+                        published.setPasswd(MD5(info));
+                        welfare.setPasswd(MD5(info));
+
+
                         welfare.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         published.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         welfare.save(new SaveListener<String>() {
@@ -190,6 +203,14 @@ public class PublishActivity extends AppCompatActivity {
                         task.setDistrictName(String.valueOf(editText11.getText()));
                         task.setDetailAddress(String.valueOf(editText12.getText()));
                         task.setDetail(String.valueOf(editText13.getText()));
+
+                        String info = "任务名称："+editText.getText()+"；任务类型："+spin+"；所需人数："+editText1.getText()+"人；任务时间：始：";
+                        info = info+editText2.getText()+"年"+editText3.getText()+"月"+editText4.getText()+"日；终：";
+                        info = info+editText5.getText()+"年"+editText6.getText()+"月"+editText7.getText()+"日；悬赏时间币：";
+                        info = info+editText8.getText()+"TCC；服务地点"+editText9.getText()+"省"+editText10.getText()+"市"+editText11.getText()+"区县";
+                        info = info+editText12.getText()+"；详细说明："+editText13.getText();
+                        published.setPasswd(MD5(info));
+                        task.setPasswd(MD5(info));
 
                         published.setUsername(BmobUser.getCurrentUser(User.class).getUsername());
                         published.setName(String.valueOf(editText.getText()));
@@ -250,5 +271,29 @@ public class PublishActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public String MD5(String info){
+        try {
+            MessageDigest md5 = MessageDigest.getInstance("MD5");
+            md5.update(info.getBytes("UTF-8"));
+            byte[] encryption = md5.digest();
+
+            StringBuffer strBuf = new StringBuffer();
+            for (int i=0;i<encryption.length;i++){
+                if(Integer.toHexString(0xff &encryption[i]).length()==1){
+                    strBuf.append("0").append(Integer.toHexString(0xff & encryption[i]));
+                }else {
+                    strBuf.append(Integer.toHexString(0xff & encryption[i]));
+                }
+            }
+            return strBuf.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return "";
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return "";
+        }
     }
 }
