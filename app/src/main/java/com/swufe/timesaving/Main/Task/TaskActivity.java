@@ -33,7 +33,7 @@ public class TaskActivity extends AppCompatActivity {
     private Task list;
     private TextView textView1,textView2,textView3,textView4,textView5;
     private TextView textView6,textView7,textView8,textView9,textView10;
-    private TextView textView11,textView12,textView13,textView14,textView15;
+    private TextView textView11,textView12,textView13,textView14,textView15,textView16;
     private Button button;
     private int clicked=0;
 
@@ -81,6 +81,8 @@ public class TaskActivity extends AppCompatActivity {
         textView14.setText(list.getDetailAddress());
         textView15=findViewById(R.id.add_content);
         textView15.setText(list.getDetail());
+        textView16=findViewById(R.id.textView48);
+        textView16.setText(list.getPasswd());
 
         button=findViewById(R.id.button);
         Log.i("TaskActivity", "onCreate: "+list.getReceived());
@@ -116,6 +118,7 @@ public class TaskActivity extends AppCompatActivity {
                                 received.setDetail(list.getDetail());
                                 received.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                                 received.setiD(list.getObjectId());
+                                received.setPasswd(list.getPasswd());
                                 received.save(new SaveListener<String>() {
                                     @Override
                                     public void done(String s, BmobException e) {
