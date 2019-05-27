@@ -36,7 +36,6 @@
         android:roundIcon="@mipmap/logo_fang"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Mine.Wallet.FinishedActivity"></activity>
         <activity
             android:name=".Info.News.NewsActivity"
             android:screenOrientation="portrait"
