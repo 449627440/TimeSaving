@@ -1012,15 +1012,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape_button"
         android:text="已领取"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline90"
-        app:layout_constraintEnd_toStartOf="@+id/guideline95"
-        app:layout_constraintStart_toStartOf="@+id/guideline92"
+        app:layout_constraintEnd_toStartOf="@+id/guideline129"
+         app:layout_constraintStart_toStartOf="@+id/guideline92"
         app:layout_constraintTop_toTopOf="@+id/guideline105"
         app:layout_constraintVertical_bias="0.0" />
 
