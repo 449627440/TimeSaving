@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.swufe.timesaving.Init.Published;
 import com.swufe.timesaving.Init.Received;
 import com.swufe.timesaving.Init.Task;
+import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class ReceivedActivity extends AppCompatActivity {
     private Received list;
     private TextView textView1, textView2, textView3, textView4, textView5;
     private TextView textView6, textView7, textView8, textView9, textView10;
-    private TextView textView11, textView12, textView13, textView14, textView15;
+    private TextView textView11, textView12, textView13, textView14, textView15,textView16;
     private Button button;
     private int clicked = 0;
 
@@ -74,6 +75,9 @@ public class ReceivedActivity extends AppCompatActivity {
         textView14.setText(list.getDetailAddress());
         textView15 = findViewById(R.id.add_content);
         textView15.setText(list.getDetail());
+        textView16=findViewById(R.id.textView52);
+        textView16.setText(list.getPasswd());
+
 
         button = findViewById(R.id.button);
         Log.i("TaskActivity", "onCreate: " + clicked);
@@ -110,6 +114,32 @@ public class ReceivedActivity extends AppCompatActivity {
                                 });
                             }else {
                                 Log.i("ReceivedActivity", "done: "+e);
+                                BmobQuery<Welfare> query = new BmobQuery<>();
+                                query.addWhereEqualTo("objectId", list.getiD());
+                                Log.i("ReceivedActivity", "onClick: "+list.getiD());
+                                query.findObjects(new FindListener<Welfare>() {
+                                    @Override
+                                    public void done(List<Welfare> list1, BmobException e) {
+                                        Welfare welfare = list1.get(0);
+                                        welfare.setReceived(false);
+                                        welfare.update(new UpdateListener() {
+                                            @Override
+                                            public void done(BmobException e) {
+                                                if (e == null) {
+                                                    list.delete(new UpdateListener() {
+                                                        @Override
+                                                        public void done(BmobException e) {
+                                                            button.setText("请回到主界面重新领取");
+                                                            Toast.makeText(getApplicationContext(), "成功取消领取！请回到主界面重新领取！", Toast.LENGTH_SHORT).show();
+                                                        }
+                                                    });
+                                                } else {
+                                                    Log.i("ReceivedActivity", "done: " + e);
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
                             }
 
                         }

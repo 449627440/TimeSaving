@@ -15,6 +15,15 @@ public class User extends BmobUser {
     private String county;
     private String street;
     private String briefIntro;
+    private String coin;
+
+    public String getCoin() {
+        return coin;
+    }
+
+    public void setCoin(String coin) {
+        this.coin = coin;
+    }
 
     public String getName() {
         return name;

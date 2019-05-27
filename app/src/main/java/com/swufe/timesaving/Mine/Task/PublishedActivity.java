@@ -13,6 +13,7 @@ import com.swufe.timesaving.Init.Published;
 import com.swufe.timesaving.Init.Received;
 import com.swufe.timesaving.Init.Task;
 import com.swufe.timesaving.Init.User;
+import com.swufe.timesaving.Init.Welfare;
 import com.swufe.timesaving.R;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class PublishedActivity extends AppCompatActivity {
     private Published list;
     private TextView textView1,textView2,textView3,textView4,textView5;
     private TextView textView6,textView7,textView8,textView9,textView10;
-    private TextView textView11,textView12,textView13,textView14,textView15;
+    private TextView textView11,textView12,textView13,textView14,textView15,textView16;
     private Button button;
     private int clicked=0;
 
@@ -78,6 +79,8 @@ public class PublishedActivity extends AppCompatActivity {
         textView14.setText(list.getDetailAddress());
         textView15=findViewById(R.id.add_content);
         textView15.setText(list.getDetail());
+        textView16=findViewById(R.id.textView52);
+        textView16.setText(list.getPasswd());
 
         button=findViewById(R.id.button);
         Log.i("TaskActivity", "onCreate: "+clicked);
@@ -91,50 +94,107 @@ public class PublishedActivity extends AppCompatActivity {
                     query.findObjects(new FindListener<Task>() {
                         @Override
                         public void done(List<Task> list1, BmobException e) {
-                            Task task = list1.get(0);
-                            task.delete(new UpdateListener() {
-                                @Override
-                                public void done(BmobException e) {
-                                    if(e==null){
-                                        BmobQuery<Received> query=new BmobQuery<>();
-                                        query.addWhereEqualTo("objectId",list.getiD());
-                                        query.findObjects(new FindListener<Received>() {
-                                            @Override
-                                            public void done(List<Received> list2, BmobException e) {
-                                                if(e==null){
-                                                    Received received = list2.get(0);
-                                                    received.delete(new UpdateListener() {
-                                                        @Override
-                                                        public void done(BmobException e) {
-                                                            if(e==null){
-                                                                list.delete(new UpdateListener() {
-                                                                    @Override
-                                                                    public void done(BmobException e) {
-                                                                        button.setText("请回到发布界面重新发布");
-                                                                        Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
-                                                                    }
-                                                                });
+                            if(e==null){
+                                Task task = list1.get(0);
+                                task.delete(new UpdateListener() {
+                                    @Override
+                                    public void done(BmobException e) {
+                                        if(e==null){
+                                            BmobQuery<Received> query=new BmobQuery<>();
+                                            query.addWhereEqualTo("objectId",list.getiD());
+                                            query.findObjects(new FindListener<Received>() {
+                                                @Override
+                                                public void done(List<Received> list2, BmobException e) {
+                                                    if(e==null){
+                                                        Received received = list2.get(0);
+                                                        received.delete(new UpdateListener() {
+                                                            @Override
+                                                            public void done(BmobException e) {
+                                                                if(e==null){
+                                                                    list.delete(new UpdateListener() {
+                                                                        @Override
+                                                                        public void done(BmobException e) {
+                                                                            button.setText("请回到发布界面重新发布");
+                                                                            Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                    });
+                                                                }
                                                             }
-                                                        }
-                                                    });
+                                                        });
 
-                                                }else {
-                                                    Log.i("PublishedActivity", "done: "+e);
-                                                    list.delete(new UpdateListener() {
-                                                        @Override
-                                                        public void done(BmobException e) {
-                                                            button.setText("请回到发布界面重新发布");
-                                                            Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
-                                                        }
-                                                    });
+                                                    }else {
+                                                        Log.i("PublishedActivity", "done: "+e);
+                                                        list.delete(new UpdateListener() {
+                                                            @Override
+                                                            public void done(BmobException e) {
+                                                                button.setText("请回到发布界面重新发布");
+                                                                Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
+                                                            }
+                                                        });
+                                                    }
                                                 }
-                                            }
-                                        });
+                                            });
+
+                                        }
 
                                     }
+                                });
+                            }else {
+                                Log.i("ReceivedActivity", "done: "+e);
+                                BmobQuery<Welfare> query=new BmobQuery<>();
+                                query.addWhereEqualTo("objectId",list.getiD());
+                                query.findObjects(new FindListener<Welfare>() {
+                                    @Override
+                                    public void done(List<Welfare> list1, BmobException e) {
+                                        if(e==null){
+                                            Welfare welfare = list1.get(0);
+                                            welfare.delete(new UpdateListener() {
+                                                @Override
+                                                public void done(BmobException e) {
+                                                    if(e==null){
+                                                        BmobQuery<Received> query=new BmobQuery<>();
+                                                        query.addWhereEqualTo("objectId",list.getiD());
+                                                        query.findObjects(new FindListener<Received>() {
+                                                            @Override
+                                                            public void done(List<Received> list2, BmobException e) {
+                                                                if(e==null){
+                                                                    Received received = list2.get(0);
+                                                                    received.delete(new UpdateListener() {
+                                                                        @Override
+                                                                        public void done(BmobException e) {
+                                                                            if(e==null){
+                                                                                list.delete(new UpdateListener() {
+                                                                                    @Override
+                                                                                    public void done(BmobException e) {
+                                                                                        button.setText("请回到发布界面重新发布");
+                                                                                        Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
+                                                                                    }
+                                                                                });
+                                                                            }
+                                                                        }
+                                                                    });
 
-                                }
-                            });
+                                                                }else {
+                                                                    Log.i("PublishedActivity", "done: "+e);
+                                                                    list.delete(new UpdateListener() {
+                                                                        @Override
+                                                                        public void done(BmobException e) {
+                                                                            button.setText("请回到发布界面重新发布");
+                                                                            Toast.makeText(getApplicationContext(),"请回到发布界面重新发布！",Toast.LENGTH_SHORT).show();
+                                                                        }
+                                                                    });
+                                                                }
+                                                            }
+                                                        });
+
+                                                    }
+
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                            }
                         }
                     });
 

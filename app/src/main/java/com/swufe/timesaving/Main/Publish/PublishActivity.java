@@ -158,7 +158,7 @@ public class PublishActivity extends AppCompatActivity {
                         info = info+editText12.getText()+"；详细说明："+editText13.getText();
                         published.setPasswd(MD5(info));
                         welfare.setPasswd(MD5(info));
-
+                        welfare.setReceived(false);
 
                         welfare.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
                         published.setTypeImage("http://bmob-cdn-25862.b0.upaiyun.com/2019/05/19/3dbd426b4055004b80fa0e08a935907c.png");
@@ -166,6 +166,7 @@ public class PublishActivity extends AppCompatActivity {
                             @Override
                             public void done(String s, BmobException e) {
                                 if(e==null){
+                                    published.setiD(welfare.getObjectId());
                                     published.save(new SaveListener<String>() {
                                         @Override
                                         public void done(String s, BmobException e) {
