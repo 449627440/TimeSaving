@@ -28,8 +28,10 @@
                 android:id="@+id/imageView4"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
                 android:scaleType="fitXY"
-                app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline111"
                 app:layout_constraintStart_toStartOf="@+id/guideline112"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,10 +50,11 @@
                 android:layout_height="wrap_content"
                 android:text="任务类型"
                 android:textColor="@color/colorPrimaryDark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline113"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/guideline13" />
+                app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                app:layout_constraintEnd_toStartOf="@+id/guideline121"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline113"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/guideline111"
@@ -115,7 +118,7 @@
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintGuide_percent="0.05"
+                app:layout_constraintGuide_percent="0.01"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -125,10 +128,11 @@
                 android:layout_height="wrap_content"
                 android:text="任务名称"
                 android:textColor="@color/colorPrimaryDark"
-                app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline121"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline113"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
             <TextView
                 android:id="@+id/textView36"
@@ -149,9 +153,9 @@
                 android:text="20"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline121"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline116"
+                app:layout_constraintStart_toStartOf="@+id/guideline122"
                 app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
             <TextView
@@ -161,9 +165,9 @@
                 android:text="月"
                 android:textColor="@color/colorPrimaryDark"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline116"
+                app:layout_constraintEnd_toStartOf="@+id/guideline122"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/guideline113"
+                app:layout_constraintStart_toStartOf="@+id/guideline121"
                 app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
             <TextView
@@ -202,20 +206,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline122"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView45"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="Hash值"
-                android:textColor="@color/colorPrimaryDark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline121"
-                app:layout_constraintTop_toTopOf="@+id/guideline13" />
 
 
         </android.support.constraint.ConstraintLayout>
